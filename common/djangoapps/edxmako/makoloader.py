@@ -82,6 +82,10 @@ class MakoLoader(BaseLoader):
                 # not exist.
                 return source, file_path
 
+    def load_template_source(self, template_name, template_dirs=None):
+        # Just having this makes the template load as an instance, instead of a class.
+        return self.base_loader.load_template_source(template_name, template_dirs)
+
     def reset(self):
         self.base_loader.reset()
 
